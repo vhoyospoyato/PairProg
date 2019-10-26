@@ -4,5 +4,5 @@
 
 ### *Participants*
 
-Julian Tannus
-Vicente Hoyos
+#### Julian Tannus
+#### Vicente Hoyos
