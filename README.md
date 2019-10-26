@@ -2,7 +2,7 @@
 
 ## LinkedList Dictionary
 
-### *Participants*
+### _Participants_
 
 #### Julian Tannus
 #### Vicente Hoyos
