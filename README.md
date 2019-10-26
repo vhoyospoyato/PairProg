@@ -1,8 +1,8 @@
-#PairProgramming Activity
+# PairProgramming Activity
 
-##LinkedList Dictionary
+## LinkedList Dictionary
 
-###*Participants*
+### *Participants*
 
 Julian Tannus
 Vicente Hoyos
