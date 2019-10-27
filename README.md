@@ -8,7 +8,7 @@
 - Vicente Hoyos
 
 **Code Average Execution Time:** 250000 milliseconds / 250 seconds / 4 minutes, 10 seconds  
-(For the faster branch, we tried making it faster by storing the String value of the last Node in the dictionary, and comparing every new word with it, to see if we could skip going through all the linked list for the values that were going to be stored in the final position of the Linked List. However, the code didn't become faster so we decided to leave the branches the same.)
+_(For the faster branch, we tried making it faster by storing the String value of the last Node in the dictionary, and comparing every new word with it, to see if we could skip going through all the linked list for the values that were going to be stored in the final position of the Linked List. However, the code didn't become faster so we decided to leave the branches the same.)_
 
 **Instructions**  
 You will work in pairs
