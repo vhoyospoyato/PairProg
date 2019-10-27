@@ -1,40 +1,66 @@
 import java.io.*;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class Main {
-
     public static void main(String[] args) throws IOException {
         File file = new File("unsorteddict.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdict.txt"));
 
         LinkedList<Node> dictionary = new LinkedList<Node>();
-        String line;
-        String tempLine = "";
         Node head = null;
+        String line;
 
         while ((line = br.readLine()) != null) {
-            if (head == null)
-            {
+            if (dictionary.isEmpty()) {
                 head = new Node(line);
                 dictionary.add(head);
-                start = false;
             }
-            else{
-                Node current = head;
-                Node previous;
-                    while(current.next != null){
-                        if (current.data.compareToIgnoreCase(head.data) < 0){
-                            head.next = current;
-                            previous = current;
-                        }
-                        current = current.next;
+            else {
+                head = dictionary.getFirst();
+                if (head.next == null) {
+                    if (head.data.compareToIgnoreCase(line) > 0) {
+                        Node temp = head;
+                        head = new Node(line);
+                        head.next = temp;
+                        dictionary.addFirst(head);
                     }
+                    else {
+                        Node temp = new Node(line);
+                        head.next = temp;
+                        dictionary.add(temp);
+                    }
+                }
+                else {
+                    Node current = head;
+                    int index = 0;
+                    while (current.next != null){
+                        if (current.data.compareToIgnoreCase(line) > 0) {
+                            Node temp = new Node(line);
+                            temp.next = current;
+                            if (index > 0){
+                                dictionary.get(index - 1).next = temp;
+                            }
+                            dictionary.add(index, temp);
+                            break;
+                        }
+                        else{
+                            current = current.next;
+                            if (current.next == null){
+                                Node temp = new Node(line);
+                                dictionary.getLast().next = temp;
+                                dictionary.addLast(temp);
+                                break;
+                            }
+                            index ++;
+                        }
+                    }
+                }
             }
-            bw.write(line);
+        }
+        for (int i = 0; i < dictionary.size(); i++) {
+            bw.write(dictionary.get(i).data);
             bw.newLine();
         }
-        System.out.println(dictionary.get(0).data);
     }
 }
