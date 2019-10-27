@@ -34,6 +34,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
+        long start = System.currentTimeMillis();
         File file = new File("unsorteddict.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdict.txt"));
@@ -97,6 +98,9 @@ public class Main {
         }
 
         bw.close();
+        System.out.print("Time taken: ");
+        System.out.print(System.currentTimeMillis() - start);
+        System.out.println(" milliseconds.");
         userArguments(dictionary);
     }
 }
