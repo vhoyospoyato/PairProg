@@ -21,7 +21,7 @@ public class Main {
                 catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
                         if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
-                            System.out.println(dictionary.get(j).data);
+                            System.out.println(j);
                             break;
                         }
                         if (j == dictionary.size() - 1){
