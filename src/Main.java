@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
+
+    // Arguments: User inputs 0 to 10 args to retrieve information from sorted dictionary.
     public static void userArguments(LinkedList<Node> dictionary){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter from 0 to 10 commands separated by a space:");
@@ -33,8 +35,9 @@ public class Main {
         }
     }
 
+
     public static void main(String[] args) throws IOException {
-        long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();                                            //Timer starts.
         File file = new File("unsorteddict.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdict.txt"));
@@ -46,42 +49,42 @@ public class Main {
         while ((line = br.readLine()) != null) {
             if (dictionary.isEmpty()) {
                 head = new Node(line);
-                dictionary.add(head);
+                dictionary.add(head);                           //First node inserted in dictionary
             }
             else {
                 head = dictionary.getFirst();
-                if (head.next == null) {
+                if (head.next == null) {                        //Checks if there is a second value in dictionary
                     if (head.data.compareToIgnoreCase(line) > 0) {
                         Node temp = head;
                         head = new Node(line);
                         head.next = temp;
-                        dictionary.addFirst(head);
+                        dictionary.addFirst(head);              //Enters new node as first and pushes other to second
                     }
                     else {
                         Node temp = new Node(line);
                         head.next = temp;
-                        dictionary.add(temp);
+                        dictionary.add(temp);                   //Enters new node as second
                     }
                 }
-                else {
+                else {                                          //For every new node after dictionary size is bigger or equal to 2
                     Node current = head;
                     int index = 0;
                     while (current.next != null){
-                        if (current.data.compareToIgnoreCase(line) > 0) {
+                        if (current.data.compareToIgnoreCase(line) > 0) { //Check if word comes before in alphabet
                             Node temp = new Node(line);
                             temp.next = current;
-                            if (index > 0){
+                            if (index > 0){                               //For every value, except first
                                 dictionary.get(index - 1).next = temp;
                             }
-                            dictionary.add(index, temp);
+                            dictionary.add(index, temp);                  //Add node to correct alphabetical position
                             break;
                         }
                         else{
-                            current = current.next;
+                            current = current.next;             //If words comes later in the alphabet move to next node
                             if (current.next == null){
                                 Node temp = new Node(line);
                                 dictionary.getLast().next = temp;
-                                dictionary.addLast(temp);
+                                dictionary.addLast(temp);       //Add node in last position
                                 break;
                             }
                             index ++;
@@ -99,8 +102,8 @@ public class Main {
 
         bw.close();
         System.out.print("Time taken: ");
-        System.out.print(System.currentTimeMillis() - start);
+        System.out.print(System.currentTimeMillis() - start);   //Prints total sorting time
         System.out.println(" milliseconds.");
-        userArguments(dictionary);
+        userArguments(dictionary);                              //Execute method for user to enter arguments
     }
 }
