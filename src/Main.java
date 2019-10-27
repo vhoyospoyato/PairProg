@@ -1,7 +1,38 @@
 import java.io.*;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Main {
+
+    public static void userArguments(LinkedList<Node> dictionary){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter from 0 to 10 commands separated by a space:");
+        String argument = scan.nextLine();
+        scan.close();
+        String[] commands = argument.split(" ");
+        if (commands.length > 10){
+            System.out.println("Invalid number of commands! Ending program...");
+        }
+        else{
+            for (int i = 0; i < commands.length ; i++){
+                try{
+                    System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
+                }
+                catch (Exception e){
+                    for (int j = 0; j < dictionary.size(); j++){
+                        if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
+                            System.out.println(dictionary.get(j).data);
+                            break;
+                        }
+                        if (j == dictionary.size() - 1){
+                            System.out.println(-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         File file = new File("unsorteddict.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -58,9 +89,14 @@ public class Main {
                 }
             }
         }
+        br.close();
+
         for (int i = 0; i < dictionary.size(); i++) {
             bw.write(dictionary.get(i).data);
             bw.newLine();
         }
+
+        bw.close();
+        userArguments(dictionary);
     }
 }
