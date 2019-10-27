@@ -7,9 +7,11 @@
 #### Julian Tannus
 #### Vicente Hoyos
 
+**Code Average Execution Time:** 250000 milliseconds / 250 seconds / 4 minutes, 10 seconds
+
 **Instructions**
 
-**Pair programming**
+**Pair programming**  
 You will work in pairs
 1. First create a project on Github (follow the usual instructions)
 2. Clone the project on one’s computer
@@ -17,7 +19,7 @@ You will work in pairs
 4.  When they decide, they will commit the code, push it to a repository created by themselves and then add the other member as a collaborator of the project. That way, he/she will be able to clone, make push and pull to share the code.
 5. It doesn’t matter in which computer you are working, both of you will be all the time discussing the code and making modifications on just one computer
 
-**Push pulling protocol**
+**Push pulling protocol**  
 At the beginning, working with a repository can be tricky and lead to errors. To minimize the chances of conflicts, we try to have always the code synced before making any modifications. To ensure this, work in this way:
 1. Member A creates a repository on GitHub and IntelliJ following the usual instructions
 2. Member A adds member B to the project as a “collaborator”
@@ -31,7 +33,7 @@ At the beginning, working with a repository can be tricky and lead to errors. To
 .. 1. git pull –u origin master (syntax is the same as push, “git pull” should work as well)
 10. Go back to step 7 (keep doing until the code is finished)
 
-YouhavetocreateinpairsaJAVAprojecttomanageadictionarybuiltusingLinkedlists  Requisites:
+**Requisites:**  
 1. The application will be able to open a file called “unsorteddict.txt”
 2. This file will be a collection of words where each line contains a word
 3. The application will read the file line by line, in other words, it will read a new word each time a new line is read
