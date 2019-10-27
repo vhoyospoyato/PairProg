@@ -4,14 +4,12 @@
 
 ### _Participants_
 
-#### Julian Tannus
-#### Vicente Hoyos
+- Julian Tannus
+- Vicente Hoyos
 
 **Code Average Execution Time:** 250000 milliseconds / 250 seconds / 4 minutes, 10 seconds
 
-**Instructions**
-
-**Pair programming**  
+**Instructions**  
 You will work in pairs
 1. First create a project on Github (follow the usual instructions)
 2. Clone the project on one’s computer
