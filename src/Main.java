@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         long start = System.currentTimeMillis();                                            //Timer starts.
-        File file = new File("unsorteddict.txt");
+        File file = new File("unsortedDictTest.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdict.txt"));
 
