@@ -40,7 +40,7 @@ public class Main {
         long start = System.currentTimeMillis();                                            //Timer starts.
         File file = new File("unsortedDictTest.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
-        BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdict.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("sortededdictTest.txt"));
 
         LinkedList<Node> dictionary = new LinkedList<Node>();
         Node head = null;
