@@ -47,3 +47,14 @@ console
 9. If the argument is a word, the application should print out in the console the number that represent the order of that word inside the dictionary. If it doesn’t exist, it should write “-1”.
 10. Using the LinkedList<T> class from JAVA API is allowed
 11. Using any method that automatically sort the list is not allowed, you have to create an algorithm that does the sorting
+   
+## Testing
+
+### Performance testing
+We placed several timers to control what time it takes to do certain tasks:
+The first part of the code which allowed user inputs and gave the corresponding outputs took: miliseconds
+
+
+ Since some tasks take a variable amount of time, calculate the average, maximum and minimum of
+certain tasks to have a better understanding of the limitations of our algorithms (10 points)
+ Find bottlenecks and fix them (10 points)
