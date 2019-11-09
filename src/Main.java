@@ -18,10 +18,9 @@ public class Main {
 
         else{
             for (int i = 0; i < commands.length ; i++){
-                try
-                { if (int=-1)
-                        {
-                        BufferedReader reader1 = new BufferedReader(new FileReader ("/Users/PairProg/Sortedbyprogram.txt"));
+                try {
+                    if (Integer.parseInt(commands[i]) ==-1){
+                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/PairProg/Sortedbyprogram.txt"));
                         BufferedReader reader2 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/sortedDictTest.txt"));
 
                         String line1 = reader1.readLine();
@@ -30,15 +29,11 @@ public class Main {
                         boolean areEqual = true;
                         int lineNum = 1;
 
-                        while (line1 != null || line2 != null)
-                        {
-                            if(line1 == null || line2 == null)
-                            {
+                        while (line1 != null || line2 != null) {
+                            if (line1 == null || line2 == null) {
                                 areEqual = false;
                                 break;
-                            }
-                            else if(! line1.equalsIgnoreCase(line2))
-                            {
+                            } else if (!line1.equalsIgnoreCase(line2)) {
                                 areEqual = false;
                                 break;
                             }
@@ -48,25 +43,21 @@ public class Main {
                             lineNum++;
                         }
 
-                        if(areEqual)
-                        {
+                        if (areEqual) {
                             System.out.println("Two files have same content.");
-                        }
-                        else
-                        {
-                            System.out.println("Two files have different content. They differ at line "+lineNum);
-                            System.out.println("Sortedbyprogram has "+line1+" and sortedDictTest has "+line2+" at line "+lineNum);
+                        } else {
+                            System.out.println("Two files have different content. They differ at line " + lineNum);
+                            System.out.println("Sortedbyprogram has " + line1 + " and sortedDictTest has " + line2 + " at line " + lineNum);
                         }
 
                         reader1.close();
 
                         reader2.close();
-                         }
-
+                    }
                     else{
 
                     System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
-                 }
+                    }
                     catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
                         if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
