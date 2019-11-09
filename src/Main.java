@@ -76,7 +76,7 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        long start = System.currentTimeMillis();                                            //Timer starts.
+        long start = System.currentTimeMillis();                            //Timer starts.
         File file = new File("unsortedDictTest.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
@@ -119,11 +119,18 @@ public class Main {
                             break;
                         }
                         else{
-                            current = current.next;             //If words comes later in the alphabet move to next node
+                            current = current.next;                               //If words comes later in the alphabet move to next node
                             if (current.next == null){
                                 Node temp = new Node(line);
-                                dictionary.getLast().next = temp;
-                                dictionary.addLast(temp);       //Add node in last position
+                                if (current.data.compareToIgnoreCase(line) > 0){
+                                    temp.next = current;
+                                    dictionary.get(index).next = temp;
+                                    dictionary.add(index + 1, temp);
+                                }
+                                else{
+                                    dictionary.getLast().next = temp;
+                                    dictionary.addLast(temp);                         //Add node in last position
+                                }
                                 break;
                             }
                             index ++;
