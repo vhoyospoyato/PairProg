@@ -12,8 +12,11 @@
 
 - Add code that performs a verification test when the value “-1” is passed to the program as an argument
 (5 points)
+_Done
+
 - Why don’t we choose the word “test” as an argument to activate the test?
-Passing an argument as "test" would make a search through the sorted dictionary instead of making a comparison between files.
+_Passing an argument as "test" would make a search through the sorted dictionary instead of making a comparison between files.
+
 - Check with several words that the position matches (5 points)
 - Performs a full test of the 10,000 words (10 points)
 - Performance test (25 points)
