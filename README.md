@@ -12,7 +12,7 @@
 
 - Add code that performs a verification test when the value “-1” is passed to the program as an argument
 (5 points)
-_Done
+_Done_
 
 - Why don’t we choose the word “test” as an argument to activate the test?
 _Passing an argument as "test" would make a search through the sorted dictionary instead of making a comparison between files.
