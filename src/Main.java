@@ -19,8 +19,8 @@ public class Main {
         else{
             for (int i = 0; i < commands.length ; i++){
                 try {
-                    if (Integer.parseInt(commands[i]) ==-1){
-                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/PairProg/Sortedbyprogram.txt"));
+                    if (Integer.parseInt(commands [i]) == -1) {
+                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/Sortedbyprogram.txt"));
                         BufferedReader reader2 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/sortedDictTest.txt"));
 
                         String line1 = reader1.readLine();
@@ -53,12 +53,11 @@ public class Main {
                         reader1.close();
 
                         reader2.close();
-                    }
-                    else{
+                    } else {
 
-                    System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
+                        System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
                     }
-                    catch (Exception e){
+                }catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
                         if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
                             System.out.println(j);
