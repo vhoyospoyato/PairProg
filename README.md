@@ -72,7 +72,7 @@ The average time was of *670* milliseconds approximately.
 
 7. Find bottlenecks and fix them (10 points)
 
-Running the matching test we found that the word professed was being placed in the wrong place, therefore we had to change the last else statement.
+Running the matching test we found that a word was being placed in the wrong place, therefore we had to change the last else statement.
 
 
    
