@@ -1,4 +1,4 @@
-# PairProgramming Activity
+# Pair Programming Activity 2
 
 ## LinkedList Dictionary
 ![Dictionary](https://www.dailydot.com/wp-content/uploads/d89/cd/ddc38d1af1e11ba9835fedd40edf574d.jpg)
@@ -99,6 +99,6 @@ This made a huge difference in time and managed to order the dictionary properly
 
 We tested the code with negative numbers, words that weren't in the dictionary, numbers higher than the length of the dictionary and words with different characters that aren't part of the alphabet.
 
-######_For further information contact: [Martina Armas](marmas.ieu2017@student.ie.edu) or [Vicente Hoyos](vhoyos.ieu2017@student.ie.edu)_
+###### _For further information contact: [Martina Armas](marmas.ieu2017@student.ie.edu) or [Vicente Hoyos](vhoyos.ieu2017@student.ie.edu)_
 
 
