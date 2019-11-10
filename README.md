@@ -1,12 +1,8 @@
 # Pair Programming Activity 2
-
+###### _By: Martina Armas and Vicente Hoyos_
 ## LinkedList Dictionary
 ![Dictionary](https://www.dailydot.com/wp-content/uploads/d89/cd/ddc38d1af1e11ba9835fedd40edf574d.jpg)
 
-### _Made by:_
-
-- Martina de Armas
-- Vicente Hoyos
 
 ## Verification test
 
