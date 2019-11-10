@@ -58,17 +58,21 @@ Passing the word "test" as an argument would make the program look for the word 
 3. Check with several words that the position matches (5 points)
 
 The program displays the line and the word that are not in the right place.
+
 4. Performs a full test of the 10,000 words (10 points)
-5. Performance test (25 points) 
-6. Place several timers to control what time it takes to do certain tasks. Do printouts to see that info on the
+
+## Performance test (25 points) 
+
+5. Place several timers to control what time it takes to do certain tasks. Do printouts to see that info on the
 console (5 points)
 
 This is found in the branch "Testing"
-7. Since some tasks take a variable amount of time, calculate the average, maximum and minimum of
+
+6. Since some tasks take a variable amount of time, calculate the average, maximum and minimum of
 certain tasks to have a better understanding of the limitations of our algorithms (10 points)
 
 
-8. Find bottlenecks and fix them (10 points)
+7. Find bottlenecks and fix them (10 points)
 
 Running the matching test we found that the word professed was being placed in the wrong place, therefore we had to change the last else statement.
 
@@ -95,7 +99,7 @@ Running the matching test we found that the word professed was being placed in t
 
 This made a huge difference in time and managed to order the dictionary properly.
 
-9. Check against different inputs: Inputs not expected, numbers beyond the limits, etc.(10 points)
+8. Check against different inputs: Inputs not expected, numbers beyond the limits, etc.(10 points)
 
 We tested the code with negative numbers, words that weren't in the dictionary, numbers higher than the length of the dictionary and words with different characters that aren't part of the alphabet.
 
