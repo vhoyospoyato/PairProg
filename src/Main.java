@@ -88,38 +88,38 @@ public class Main {
         while ((line = br.readLine()) != null) {
             if (dictionary.isEmpty()) {
                 head = new Node(line);
-                dictionary.add(head);                           //First node inserted in dictionary
+                dictionary.add(head);
             }
             else {
                 head = dictionary.getFirst();
-                if (head.next == null) {                        //Checks if there is a second value in dictionary
+                if (head.next == null) {
                     if (head.data.compareToIgnoreCase(line) > 0) {
                         Node temp = head;
                         head = new Node(line);
                         head.next = temp;
-                        dictionary.addFirst(head);              //Enters new node as first and pushes other to second
+                        dictionary.addFirst(head);
                     }
                     else {
                         Node temp = new Node(line);
                         head.next = temp;
-                        dictionary.add(temp);                   //Enters new node as second
+                        dictionary.add(temp);
                     }
                 }
-                else {                                          //For every new node after dictionary size is bigger or equal to 2
+                else {
                     Node current = head;
                     int index = 0;
                     while (current.next != null){
-                        if (current.data.compareToIgnoreCase(line) > 0) { //Check if word comes before in alphabet
+                        if (current.data.compareToIgnoreCase(line) > 0) {
                             Node temp = new Node(line);
                             temp.next = current;
-                            if (index > 0){                               //For every value, except first
+                            if (index > 0){
                                 dictionary.get(index - 1).next = temp;
                             }
-                            dictionary.add(index, temp);                  //Add node to correct alphabetical position
+                            dictionary.add(index, temp);
                             break;
                         }
                         else{
-                            current = current.next;                               //If words comes later in the alphabet move to next node
+                            current = current.next;
                             if (current.next == null){
                                 Node temp = new Node(line);
                                 if (current.data.compareToIgnoreCase(line) > 0){
@@ -129,7 +129,7 @@ public class Main {
                                 }
                                 else{
                                     dictionary.getLast().next = temp;
-                                    dictionary.addLast(temp);                         //Add node in last position
+                                    dictionary.addLast(temp);
                                 }
                                 break;
                             }
