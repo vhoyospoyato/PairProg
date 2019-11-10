@@ -70,9 +70,13 @@ certain tasks to have a better understanding of the limitations of our algorithm
 The average time was of *670* milliseconds approximately. 
 
 First node add time taken: 0 milliseconds.
+
 Second node add time taken: 0 milliseconds.
+
 Rest nodes added time taken: 712 milliseconds.
+
 Average time: 677
+
 Enter from 0 to 10 commands separated by a space:
 
     public static void performance() throws IOException {
