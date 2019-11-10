@@ -67,6 +67,8 @@ This is found in the branch "Testing"
 6. Since some tasks take a variable amount of time, calculate the average, maximum and minimum of
 certain tasks to have a better understanding of the limitations of our algorithms (10 points)
 
+The average time was of *670* milliseconds approximately. 
+
 
 7. Find bottlenecks and fix them (10 points)
 
