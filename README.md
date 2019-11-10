@@ -3,12 +3,12 @@
 ## LinkedList Dictionary
 ![Dictionary](https://www.dailydot.com/wp-content/uploads/d89/cd/ddc38d1af1e11ba9835fedd40edf574d.jpg)
 
-### _Participants_
+### _Made by:_
 
 - Martina de Armas
 - Vicente Hoyos
 
-### TASKS
+## Verification test
 
 1. Add code that performs a verification test when the value “-1” is passed to the program as an argument
 (5 points)
