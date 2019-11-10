@@ -60,7 +60,7 @@ public class Main {
                 }catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
                         if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
-                            System.out.println(j);
+                            System.out.println(j+1);
                             break;
                         }
                         if (j == dictionary.size() - 1){
