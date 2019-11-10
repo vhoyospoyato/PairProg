@@ -12,10 +12,44 @@
 
 - Add code that performs a verification test when the value “-1” is passed to the program as an argument
 (5 points)
-_Done_
+ if (Integer.parseInt(commands [i]) == -1) {
+                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/Sortedbyprogram.txt"));
+                        BufferedReader reader2 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/sortedDictTest.txt"));
+
+                        String line1 = reader1.readLine();
+                        String line2 = reader2.readLine();
+
+                        boolean areEqual = true;
+                        int lineNum = 1;
+
+                        while (line1 != null || line2 != null) {
+                            if (line1 == null || line2 == null) {
+                                areEqual = false;
+                                break;
+                            } else if (!line1.equalsIgnoreCase(line2)) {
+                                areEqual = false;
+                                break;
+                            }
+
+                            line1 = reader1.readLine();
+                            line2 = reader2.readLine();
+                            lineNum++;
+                        }
+
+                        if (areEqual) {
+                            System.out.println("Two files have same content.");
+                        } else {
+                            System.out.println("Two files have different content. They differ at line " + lineNum);
+                            System.out.println("Sortedbyprogram has " + line1 + " and sortedDictTest has " + line2 + " at line " + lineNum);
+                        }
+
+                        reader1.close();
+
+                        reader2.close();
 
 - Why don’t we choose the word “test” as an argument to activate the test?
-_Passing an argument as "test" would make a search through the sorted dictionary instead of making a comparison between files._
+
+Passing the word "test" as an argument would make the program look for the word test inside of the sorted Dictionary instead of comparing sortedDictTest and Sortedbyprogram
 
 - Check with several words that the position matches (5 points)
 - Performs a full test of the 10,000 words (10 points)
