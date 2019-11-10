@@ -19,7 +19,7 @@ _Passing an argument as "test" would make a search through the sorted dictionary
 
 - Check with several words that the position matches (5 points)
 - Performs a full test of the 10,000 words (10 points)
-- Performance test (25 points)
+- Performance test (25 points) _The performance test is under the branch "Testing"_
 - Place several timers to control what time it takes to do certain tasks. Do printouts to see that info on the
 console (5 points)
 - Since some tasks take a variable amount of time, calculate the average, maximum and minimum of
