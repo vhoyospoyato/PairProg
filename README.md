@@ -12,10 +12,14 @@
 
 - Add code that performs a verification test when the value “-1” is passed to the program as an argument
 (5 points)
- if (Integer.parseInt(commands [i]) == -1) {
+
+
+
+
+                        if (Integer.parseInt(commands [i]) == -1) {
                         BufferedReader reader1 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/Sortedbyprogram.txt"));
                         BufferedReader reader2 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/sortedDictTest.txt"));
-
+                        
                         String line1 = reader1.readLine();
                         String line2 = reader2.readLine();
 
