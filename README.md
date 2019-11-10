@@ -61,7 +61,7 @@ The program displays the line and the word that are not in the right place.
 
 4. Performs a full test of the 10,000 words (10 points)
 
-## Performance test (25 points) 
+## Performance test 
 
 5. Place several timers to control what time it takes to do certain tasks. Do printouts to see that info on the
 console (5 points)
@@ -99,7 +99,9 @@ Running the matching test we found that the word professed was being placed in t
 
 This made a huge difference in time and managed to order the dictionary properly.
 
-8. Check against different inputs: Inputs not expected, numbers beyond the limits, etc.(10 points)
+## Check against different inputs
+
+Inputs not expected, numbers beyond the limits, etc.(10 points)
 
 We tested the code with negative numbers, words that weren't in the dictionary, numbers higher than the length of the dictionary and words with different characters that aren't part of the alphabet.
 
