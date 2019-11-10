@@ -105,6 +105,6 @@ Inputs not expected, numbers beyond the limits, etc.(10 points)
 
 We tested the code with negative numbers, words that weren't in the dictionary, numbers higher than the length of the dictionary and words with different characters that aren't part of the alphabet.
 
-###### _For further information contact: [Martina Armas](marmas.ieu2017@student.ie.edu) or [Vicente Hoyos](vhoyos.ieu2017@student.ie.edu)_
+###### _For further information contact: [Martina Armas](https://www.linkedin.com/in/martina-armas-793b60157/) or [Vicente Hoyos](https://www.linkedin.com/in/vicente-hoyos-787594124/)_
 
 
