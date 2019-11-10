@@ -12,6 +12,7 @@ public class Main {
         String argument = scan.nextLine();
         scan.close();
         String[] commands = argument.split(" ");
+        long argTime = System.currentTimeMillis();
         if (commands.length > 10){
             System.out.println("Invalid number of commands! Ending program...");
         }
@@ -33,6 +34,9 @@ public class Main {
                 }
             }
         }
+        System.out.print("Arguments time taken: ");
+        System.out.print(System.currentTimeMillis() - argTime);   //Prints total sorting time
+        System.out.println(" milliseconds.");
     }
 
 
@@ -47,11 +51,17 @@ public class Main {
         String line;
 
         while ((line = br.readLine()) != null) {
+            long addDic = System.currentTimeMillis();
             if (dictionary.isEmpty()) {
                 head = new Node(line);
                 dictionary.add(head);                           //First node inserted in dictionary
+                System.out.print("First node add time taken: ");
+                System.out.print(System.currentTimeMillis() - addDic);   //Prints total sorting time
+                System.out.println(" milliseconds.");
             }
+
             else {
+                long addSecond = System.currentTimeMillis();
                 head = dictionary.getFirst();
                 if (head.next == null) {                        //Checks if there is a second value in dictionary
                     if (head.data.compareToIgnoreCase(line) > 0) {
@@ -65,8 +75,12 @@ public class Main {
                         head.next = temp;
                         dictionary.add(temp);                   //Enters new node as second
                     }
+                    System.out.print("Second node add time taken: ");
+                    System.out.print(System.currentTimeMillis() - addSecond);   //Prints total sorting time
+                    System.out.println(" milliseconds.");
                 }
-                else {                                          //For every new node after dictionary size is bigger or equal to 2
+
+                else {
                     Node current = head;
                     int index = 0;
                     while (current.next != null){
@@ -90,9 +104,14 @@ public class Main {
                             index ++;
                         }
                     }
+
                 }
+
             }
         }
+
+
+
         br.close();
 
         for (int i = 0; i < dictionary.size(); i++) {
@@ -101,9 +120,10 @@ public class Main {
         }
 
         bw.close();
-        System.out.print("Time taken: ");
+        System.out.print("Rest nodes added time taken: ");
         System.out.print(System.currentTimeMillis() - start);   //Prints total sorting time
         System.out.println(" milliseconds.");
+
         userArguments(dictionary);                              //Execute method for user to enter arguments
     }
 }
