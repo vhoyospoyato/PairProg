@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
 
-    // Arguments: User inputs 0 to 10 args to retrieve information from sorted dictionary.
     public static void userArguments(LinkedList<Node> dictionary){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter from 0 to 10 commands separated by a space:");
@@ -18,10 +17,12 @@ public class Main {
 
         else{
             for (int i = 0; i < commands.length ; i++){
+
                 try {
+                    long compare = System.currentTimeMillis();
                     if (Integer.parseInt(commands [i]) == -1) {
-                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/Sortedbyprogram.txt"));
-                        BufferedReader reader2 = new BufferedReader(new FileReader("/Users/martinaarmas/PairProg/sortedDictTest.txt"));
+                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/Sortedbyprogram.txt"));
+                        BufferedReader reader2 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/sortedDictTest.txt"));
 
                         String line1 = reader1.readLine();
                         String line2 = reader2.readLine();
@@ -57,7 +58,12 @@ public class Main {
 
                         System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
                     }
-                }catch (Exception e){
+                    System.out.print("Compare time taken: ");
+                    System.out.print(System.currentTimeMillis() - compare);   //Prints total sorting time
+                    System.out.println(" milliseconds.");
+                }
+
+                catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
                         if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
                             System.out.println(j+1);
