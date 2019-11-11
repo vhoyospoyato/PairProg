@@ -145,6 +145,10 @@ public class Main {
                 }
             }
         }
+        System.out.print("Time taken: ");
+        System.out.print(System.currentTimeMillis() - start);   //Prints total sorting time
+        System.out.println(" milliseconds.");
+
         br.close();
 
         for (int i = 0; i < dictionary.size(); i++) {
@@ -153,9 +157,65 @@ public class Main {
         }
 
         bw.close();
-        System.out.print("Time taken: ");
-        System.out.print(System.currentTimeMillis() - start);   //Prints total sorting time
-        System.out.println(" milliseconds.");
+
+        performance();
+
         userArguments(dictionary);                              //Execute method for user to enter arguments
     }
+
+    public static void performance() throws IOException {
+
+        long time = 0;
+
+        for (int i = 0; i < 10; i++) {
+
+            long start = System.currentTimeMillis();
+
+
+                    BufferedReader reader1 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/Sortedbyprogram.txt"));
+                    BufferedReader reader2 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/sortedDictTest.txt"));
+
+                    String line1 = reader1.readLine();
+                    String line2 = reader2.readLine();
+
+                    boolean areEqual = true;
+                    int lineNum = 1;
+
+                    while (line1 != null || line2 != null) {
+                        if (line1 == null || line2 == null) {
+                            areEqual = false;
+                            break;
+                        } else if (!line1.equalsIgnoreCase(line2)) {
+                            areEqual = false;
+                            break;
+                        }
+
+                        line1 = reader1.readLine();
+                        line2 = reader2.readLine();
+                        lineNum++;
+                    }
+
+                    if (areEqual) {
+                        System.out.println("Two files have same content.");
+                    } else {
+                        System.out.println("Two files have different content. They differ at line " + lineNum);
+                        System.out.println("Sortedbyprogram has " + line1 + " and sortedDictTest has " + line2 + " at line " + lineNum);
+                    }
+
+                    reader1.close();
+
+                    reader2.close();
+
+
+
+            long end = System.currentTimeMillis();
+            long test = end - start;
+            time = time + test;
+            }
+
+
+        System.out.println("Average time: " + (time/10));
+
+    }
 }
+
