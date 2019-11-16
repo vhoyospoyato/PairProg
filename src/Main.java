@@ -82,10 +82,10 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        long start = System.currentTimeMillis();                            //Timer starts.
-        File file = new File("unsortedDictTest.txt");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        BufferedWriter bw = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
+        long startElapsedSeconds = System.currentTimeMillis();                            //Timer starts.
+        File fileToBeProcessed = new File("unsortedDictTest.txt");
+        BufferedReader fileToBeRead = new BufferedReader(new FileReader(fileToBeProcessed));
+        BufferedWriter fileToBeWritten = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
 
         LinkedList<Node> dictionary = new LinkedList<Node>();
         Node head = null;
@@ -146,17 +146,17 @@ public class Main {
             }
         }
         System.out.print("Time taken: ");
-        System.out.print(System.currentTimeMillis() - start);   //Prints total sorting time
+        System.out.print(System.currentTimeMillis() - startElapsedSeconds);   //Prints total sorting time
         System.out.println(" milliseconds.");
 
-        br.close();
+        fileToBeRead.close();
 
         for (int i = 0; i < dictionary.size(); i++) {
-            bw.write(dictionary.get(i).data);
-            bw.newLine();
+            fileToBeWritten.write(dictionary.get(i).data);
+            fileToBeWritten.newLine();
         }
 
-        bw.close();
+        fileToBeWritten.close();
 
         performance();
 
