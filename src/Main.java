@@ -8,19 +8,19 @@ public class Main {
     public static void userArguments(LinkedList<Node> dictionary){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter from 0 to 10 commands separated by a space:");
-        String argument = scan.nextLine();
+        String userInput = scan.nextLine();
         scan.close();
-        String[] commands = argument.split(" ");
-        if (commands.length > 10){
+        String[] individualUserInput = userInput.split(" ");
+        if (individualUserInput.length > 10){
             System.out.println("Invalid number of commands! Ending program...");
         }
 
         else{
-            for (int i = 0; i < commands.length ; i++){
+            for (int i = 0; i < individualUserInput.length ; i++){
 
                 try {
                     long compare = System.currentTimeMillis();
-                    if (Integer.parseInt(commands [i]) == -1) {
+                    if (Integer.parseInt(individualUserInput [i]) == -1) {
                         BufferedReader reader1 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/Sortedbyprogram.txt"));
                         BufferedReader reader2 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/sortedDictTest.txt"));
 
@@ -56,7 +56,7 @@ public class Main {
                         reader2.close();
                     } else {
 
-                        System.out.println(dictionary.get(Integer.parseInt(commands[i])).data);
+                        System.out.println(dictionary.get(Integer.parseInt(individualUserInput[i])).data);
                     }
                     System.out.print("Compare time taken: ");
                     System.out.print(System.currentTimeMillis() - compare);   //Prints total sorting time
@@ -65,7 +65,7 @@ public class Main {
 
                 catch (Exception e){
                     for (int j = 0; j < dictionary.size(); j++){
-                        if (commands[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
+                        if (individualUserInput[i].compareToIgnoreCase(dictionary.get(j).data) == 0){
                             System.out.println(j+1);
                             break;
                         }
