@@ -19,47 +19,47 @@ public class Main {
             for (int i = 0; i < individualUserInput.length ; i++){
 
                 try {
-                    long compare = System.currentTimeMillis();
+                    long timeElapsedInFileComparison = System.currentTimeMillis();
                     if (Integer.parseInt(individualUserInput [i]) == -1) {
-                        BufferedReader reader1 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/Sortedbyprogram.txt"));
-                        BufferedReader reader2 = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/sortedDictTest.txt"));
+                        BufferedReader readSortByProgramFile = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/Sortedbyprogram.txt"));
+                        BufferedReader readSortedDictTestFile = new BufferedReader(new FileReader("/Users/vhoyospoyato/PairProg/sortedDictTest.txt"));
 
-                        String line1 = reader1.readLine();
-                        String line2 = reader2.readLine();
+                        String eachLineSortedByProgramFile = readSortByProgramFile.readLine();
+                        String eachLineSortedDictTestFile = readSortedDictTestFile.readLine();
 
                         boolean areEqual = true;
-                        int lineNum = 1;
+                        int indexPositionOfLineByNumber = 1;
 
-                        while (line1 != null || line2 != null) {
-                            if (line1 == null || line2 == null) {
+                        while (eachLineSortedByProgramFile != null || eachLineSortedDictTestFile != null) {
+                            if (eachLineSortedByProgramFile == null || eachLineSortedDictTestFile == null) {
                                 areEqual = false;
                                 break;
-                            } else if (!line1.equalsIgnoreCase(line2)) {
+                            } else if (!eachLineSortedByProgramFile.equalsIgnoreCase(eachLineSortedDictTestFile)) {
                                 areEqual = false;
                                 break;
                             }
 
-                            line1 = reader1.readLine();
-                            line2 = reader2.readLine();
-                            lineNum++;
+                            eachLineSortedByProgramFile = readSortByProgramFile.readLine();
+                            eachLineSortedDictTestFile = readSortedDictTestFile.readLine();
+                            indexPositionOfLineByNumber++;
                         }
 
                         if (areEqual) {
                             System.out.println("Two files have same content.");
                         } else {
-                            System.out.println("Two files have different content. They differ at line " + lineNum);
-                            System.out.println("Sortedbyprogram has " + line1 + " and sortedDictTest has " + line2 + " at line " + lineNum);
+                            System.out.println("Two files have different content. They differ at line " + indexPositionOfLineByNumber);
+                            System.out.println("Sortedbyprogram has " + eachLineSortedByProgramFile + " and sortedDictTest has " + eachLineSortedDictTestFile + " at line " + indexPositionOfLineByNumber);
                         }
 
-                        reader1.close();
+                        readSortByProgramFile.close();
 
-                        reader2.close();
+                        readSortedDictTestFile.close();
                     } else {
 
                         System.out.println(dictionary.get(Integer.parseInt(individualUserInput[i])).data);
                     }
                     System.out.print("Compare time taken: ");
-                    System.out.print(System.currentTimeMillis() - compare);   //Prints total sorting time
+                    System.out.print(System.currentTimeMillis() - timeElapsedInFileComparison);   //Prints total sorting time
                     System.out.println(" milliseconds.");
                 }
 
@@ -82,31 +82,31 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        long startElapsedSeconds = System.currentTimeMillis();                            //Timer starts.
-        File fileToBeProcessed = new File("unsortedDictTest.txt");
-        BufferedReader fileToBeRead = new BufferedReader(new FileReader(fileToBeProcessed));
-        BufferedWriter fileToBeWritten = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
+        long timeElapsedForDictSorting = System.currentTimeMillis();                            //Timer starts.
+        File fileToBeSorted = new File("unsortedDictTest.txt");
+        BufferedReader unsortedFileReader = new BufferedReader(new FileReader(fileToBeSorted));
+        BufferedWriter sortedFileWriter = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
 
         LinkedList<Node> dictionary = new LinkedList<Node>();
         Node head = null;
-        String line;
+        String eachLineUnsortedDictTest;
 
-        while ((line = br.readLine()) != null) {
+        while ((eachLineUnsortedDictTest = unsortedFileReader.readLine()) != null) {
             if (dictionary.isEmpty()) {
-                head = new Node(line);
+                head = new Node(eachLineUnsortedDictTest);
                 dictionary.add(head);
             }
             else {
                 head = dictionary.getFirst();
                 if (head.next == null) {
-                    if (head.data.compareToIgnoreCase(line) > 0) {
+                    if (head.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
                         Node temp = head;
-                        head = new Node(line);
+                        head = new Node(eachLineUnsortedDictTest);
                         head.next = temp;
                         dictionary.addFirst(head);
                     }
                     else {
-                        Node temp = new Node(line);
+                        Node temp = new Node(eachLineUnsortedDictTest);
                         head.next = temp;
                         dictionary.add(temp);
                     }
@@ -115,8 +115,8 @@ public class Main {
                     Node current = head;
                     int index = 0;
                     while (current.next != null){
-                        if (current.data.compareToIgnoreCase(line) > 0) {
-                            Node temp = new Node(line);
+                        if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
+                            Node temp = new Node(eachLineUnsortedDictTest);
                             temp.next = current;
                             if (index > 0){
                                 dictionary.get(index - 1).next = temp;
@@ -127,8 +127,8 @@ public class Main {
                         else{
                             current = current.next;
                             if (current.next == null){
-                                Node temp = new Node(line);
-                                if (current.data.compareToIgnoreCase(line) > 0){
+                                Node temp = new Node(eachLineUnsortedDictTest);
+                                if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0){
                                     temp.next = current;
                                     dictionary.get(index).next = temp;
                                     dictionary.add(index + 1, temp);
@@ -146,17 +146,17 @@ public class Main {
             }
         }
         System.out.print("Time taken: ");
-        System.out.print(System.currentTimeMillis() - startElapsedSeconds);   //Prints total sorting time
+        System.out.print(System.currentTimeMillis() - timeElapsedForDictSorting);   //Prints total sorting time
         System.out.println(" milliseconds.");
 
-        fileToBeRead.close();
+        unsortedFileReader.close();
 
         for (int i = 0; i < dictionary.size(); i++) {
-            fileToBeWritten.write(dictionary.get(i).data);
-            fileToBeWritten.newLine();
+            sortedFileWriter.write(dictionary.get(i).data);
+            sortedFileWriter.newLine();
         }
 
-        fileToBeWritten.close();
+        sortedFileWriter.close();
 
         performance();
 
