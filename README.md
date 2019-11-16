@@ -1,7 +1,6 @@
 # Applying Coding Principles
 ###### _By: Martina Armas and Vicente Hoyos_
 ## LinkedList Dictionary
-![Dictionary](https://www.dailydot.com/wp-content/uploads/d89/cd/ddc38d1af1e11ba9835fedd40edf574d.jpg)
 
 ### 1. Meaningful names
 In our previous code we used very broad names for methods and classes that could mean different things, this is why we changed them.
@@ -37,7 +36,7 @@ line 2 --> eachLineSortedDictTest
 lineNum--> indexPositionOfLineByNumber
 
 end --> finalTimeForPerformanceTesting
-start--> initialTimeForPerformanceTesting
+start --> initialTimeForPerformanceTesting
 test --> totalTimeElapsedForTesting
 time --> timeElapsedForPerformanceTest
 
