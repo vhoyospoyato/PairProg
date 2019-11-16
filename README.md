@@ -27,6 +27,21 @@ file --> fileToBeSorted
 br --> unsortedFileReader
 bw --> sortedFileWriter
 
+##### Performance --> performanceTestingForProgram
+file1 --> readSortedByProgramFile
+file2 --> readSortedDictTestsFile
+
+line1 --> eachLineSortedByProgram
+line 2 --> eachLineSortedDictTest
+
+lineNum--> indexPositionOfLineByNumber
+
+end --> finalTimeForPerformanceTesting
+start--> initialTimeForPerformanceTesting
+test --> totalTimeElapsedForTesting
+time --> timeElapsedForPerformanceTest
+
+
 
 
 
