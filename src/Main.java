@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        long timeElapsedForDictSorting = System.currentTimeMillis();                            //Timer starts.
+        long timeElapsedForDictSorting = System.currentTimeMillis();
         File fileToBeSorted = new File("unsortedDictTest.txt");
         BufferedReader unsortedFileReader = new BufferedReader(new FileReader(fileToBeSorted));
         BufferedWriter sortedFileWriter = new BufferedWriter(new FileWriter("Sortedbyprogram.txt"));
@@ -16,22 +16,16 @@ public class Main {
 
         while ((eachLineUnsortedDictTest = unsortedFileReader.readLine()) != null) {
             if (dictionary.isEmpty()) {
-                head = new Node(eachLineUnsortedDictTest);
-                dictionary.add(head);
+                dictionary = addFirstNodeToDictionary(head,eachLineUnsortedDictTest, dictionary );
             }
             else {
                 head = dictionary.getFirst();
                 if (head.next == null) {
                     if (head.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
-                        Node temp = head;
-                        head = new Node(eachLineUnsortedDictTest);
-                        head.next = temp;
-                        dictionary.addFirst(head);
+                        dictionary = addSecondNodeAsFirstToDictionary(head, eachLineUnsortedDictTest, dictionary);
                     }
                     else {
-                        Node temp = new Node(eachLineUnsortedDictTest);
-                        head.next = temp;
-                        dictionary.add(temp);
+                        dictionary = addSecondNodeAsLastToDictionary(head, eachLineUnsortedDictTest, dictionary);
                     }
                 }
                 else {
@@ -85,5 +79,27 @@ public class Main {
 
         UserArgumentClass.userArguments(dictionary);
     }
+
+    public static LinkedList<Node> addFirstNodeToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+        head = new Node(eachLineUnsortedDictTest);
+        dictionary.add(head);
+        return dictionary;
+    }
+
+    public static LinkedList<Node> addSecondNodeAsFirstToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+        Node temp = head;
+        head = new Node(eachLineUnsortedDictTest);
+        head.next = temp;
+        dictionary.addFirst(head);
+        return dictionary;
+    }
+
+    public static LinkedList<Node> addSecondNodeAsLastToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+        Node temp = new Node(eachLineUnsortedDictTest);
+        head.next = temp;
+        dictionary.add(temp);
+        return dictionary;
+    }
+
 }
 
