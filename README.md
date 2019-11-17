@@ -1,6 +1,8 @@
 # Applying Coding Principles
 ###### _By: Martina Armas and Vicente Hoyos_
 ## LinkedList Dictionary
+![Dictionary](https://media.wired.com/photos/5cc244cc2c90a35c66b7d930/master/w_2560%2Cc_limit/Coding-Becomes-Criminal.jpg)
+
 
 By using the 7 main coding principles we made our code more understandable, easier to modify and simple.
 
