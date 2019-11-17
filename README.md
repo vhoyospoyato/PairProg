@@ -34,7 +34,6 @@ br → unsortedFileReader
 bw → sortedFileWriter
 
 #### Performance → performanceTestingForProgram
-
 file1 → readSortedByProgramFile
 
 file2 → readSortedDictTestsFile
@@ -53,43 +52,18 @@ test → totalTimeElapsedForTesting
 
 time → timeElapsedForPerformanceTest
 
-
-
-
-
-
-
-•	Start naming methods and classes with good names
-•	The more explicit the better
-•	Instead of counter “elapsedSeconds”
-•	For classes think on real objects, avoid empty names like “manager, processor, or data”
-•	For methods use verbs
-
-
 2.	Keep functions small
 
-
-•	The smaller the function the better, it will be more readable
-•	Long function shouldn’t have more than 3 arguments
-•	Cut functions in different pieces
+We kept our functions small with less than 3 arguments as it makes them more readable
 
 
 3.	Avoid redundant commenting
 
+We erased all our cooment which explained the code as it is more understandable with the specific names we created. As there was no need for binary code or legal comments, we ommited that.
 
-•	Your code speaks by itself, if you choose the right names, there is no need to add comments
-•	Always better to comment than deliver ininteligible (not readable like binary numbers) code
-•	Always use legal comments (copyright)
 4.	SRP Single Responsibility Principle
 
-
-•	A class or method should be modified for ONE reason
-•	That means the entity should be focused on just one goal or aspect
-•	A technique is to gather together the things that change for the same reasons and separate those that change for different reasons
-•	Example: imagine the code for a game, you should have different classes for every part of the code, don’t mix code “difficulty”, “game” and “board” in the same class
-•	The more that you divide the better
-•	Is this an element that can be taken out and be part of the application?
-
+We separated "userarguments" and "performance" in different classes and called them in the Main. We tried to divide more, but didn't find how. Still what we did made managed to focus on just one goal o aspect.
 
 5.	DRY Don’t Repeat Yourself
 
