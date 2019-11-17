@@ -22,10 +22,10 @@ public class Main {
                 head = dictionary.getFirst();
                 if (head.next == null) {
                     if (head.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
-                        dictionary = addSecondNodeAsFirstToDictionary(head, eachLineUnsortedDictTest, dictionary);
+                        dictionary = addSecondNodeAsFirst(head, eachLineUnsortedDictTest, dictionary);
                     }
                     else {
-                        dictionary = addSecondNodeAsLastToDictionary(head, eachLineUnsortedDictTest, dictionary);
+                        dictionary = addSecondNodeAsLast(head, eachLineUnsortedDictTest, dictionary);
                     }
                 }
                 else {
@@ -33,7 +33,7 @@ public class Main {
                     int index = 0;
                     while (current.next != null){
                         if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
-                            dictionary = addNodeToDictionaryCorrectAlphabeticalPosition(current, index, eachLineUnsortedDictTest,dictionary);
+                            dictionary = addNodeToDictionaryInAlphabeticalOrder(current, index, eachLineUnsortedDictTest,dictionary);
                             break;
                         }
                         else{
@@ -41,11 +41,11 @@ public class Main {
                             if (current.next == null){
                                 Node temp = new Node(eachLineUnsortedDictTest);
                                 if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0){
-                                    dictionary = addNodeToDictionaryCorrectly(temp, current,index,dictionary);
+                                    dictionary = addSecondToLastNodeToDictionaryCorrectly(temp, current,index,dictionary);
                                     break;
                                 }
                                 else{
-                                    dictionary = addNodeToLastPartOfDictonary(temp, dictionary);
+                                    dictionary = addFinalNodeToDictionary(temp, dictionary);
                                     break;
                                 }
                             }
@@ -80,7 +80,7 @@ public class Main {
         return dictionary;
     }
 
-    public static LinkedList<Node> addSecondNodeAsFirstToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+    public static LinkedList<Node> addSecondNodeAsFirst(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
         Node temp = head;
         head = new Node(eachLineUnsortedDictTest);
         head.next = temp;
@@ -88,14 +88,14 @@ public class Main {
         return dictionary;
     }
 
-    public static LinkedList<Node> addSecondNodeAsLastToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+    public static LinkedList<Node> addSecondNodeAsLast(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
         Node temp = new Node(eachLineUnsortedDictTest);
         head.next = temp;
         dictionary.add(temp);
         return dictionary;
     }
 
-    public static LinkedList<Node> addNodeToDictionaryCorrectAlphabeticalPosition(Node current, int index, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+    public static LinkedList<Node> addNodeToDictionaryInAlphabeticalOrder(Node current, int index, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
         Node temp = new Node(eachLineUnsortedDictTest);
         temp.next = current;
         if (index > 0){
@@ -105,15 +105,16 @@ public class Main {
         return dictionary;
     }
 
-    public static LinkedList<Node> addNodeToDictionaryCorrectly(Node temp, Node current, int index, LinkedList<Node> dictionary){
+    public static LinkedList<Node> addSecondToLastNodeToDictionaryCorrectly(Node temp, Node current, int index, LinkedList<Node> dictionary){
         temp.next = current;
         dictionary.get(index).next = temp;
         dictionary.add(index + 1, temp);
         return dictionary;
     }
 
-    public static LinkedList<Node> addNodeToLastPartOfDictonary(Node temp, LinkedList<Node> dictionary){
+    public static LinkedList<Node> addFinalNodeToDictionary(Node temp, LinkedList<Node> dictionary){
         dictionary.getLast().next = temp;
+
         dictionary.addLast(temp);
         return dictionary;
 
