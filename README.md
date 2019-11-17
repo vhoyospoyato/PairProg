@@ -59,7 +59,7 @@ We kept our functions small with less than 3 arguments as it makes them more rea
 
 3.	Avoid redundant commenting
 
-We erased all our cooment which explained the code as it is more understandable with the specific names we created. As there was no need for binary code or legal comments, we ommited that.
+We erased all our comments which explained the code as it is more understandable with the specific names we created. As there was no need for binary code or legal comments, we ommited that.
 
 4.	SRP Single Responsibility Principle
 
@@ -67,26 +67,18 @@ We separated "userarguments" and "performance" in different classes and called t
 
 5.	DRY Don’t Repeat Yourself
 
-
-•	Every piece of knowledge must have a single, unambiguous authorative representations within a system
-•	Reuse code by extracting methods
-•	Declare variables and use them
-•	Abstract hardcoded values into constants
-
+We extracted methods to reuse the code.
 
 6.	Keep your code simple
 
+The code is simple and efficient!
 
-•	KISS: keep it simple, stupid!
-•	Avoid complexity
-•	Usually abstracting or thinking for alternative solutions feliver simpler code
 
 
 7.	YAGNI (You Ain’t Gonna Need It)
 
+We made sure that all our code is necessary and used.
 
-•	The more that we code the more that we foresee what kind of elements, classes or functions that we are going to need later
-•	Often extra code is generated which is not used later
 
 ###### _For further information contact: [Martina Armas](https://www.linkedin.com/in/martina-armas-793b60157/) or [Vicente Hoyos](https://www.linkedin.com/in/vicente-hoyos-787594124/)_
 
