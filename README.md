@@ -2,6 +2,8 @@
 ###### _By: Martina Armas and Vicente Hoyos_
 ## LinkedList Dictionary
 
+By using the 7 main coding principles (
+
 ### 1. Meaningful names
 In our previous code we used very broad names for methods and classes that could mean different things, this is why we changed them.
 
