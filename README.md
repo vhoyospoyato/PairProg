@@ -7,40 +7,51 @@ By using the 7 main coding principles we made our code more understandable, easi
 ### 1. Meaningful names
 In our previous code we used very broad names for methods and classes that could mean different things, this is why we changed them.
 
-##### User arguments class:
+#### User arguments class:
 arguments → userInput
+
 commands → individualUserInput
 
-file1 --> readSortedByProgramFile
-file2 --> readSortedDictTestsFile
+file1 → readSortedByProgramFile
 
-line1 --> eachLineSortedByProgram
-line 2 --> eachLineSortedDictTest
+file2 → readSortedDictTestsFile
 
-lineNum--> indexPositionOfLineByNumber
+line1 → eachLineSortedByProgram
 
-compare --> timeElapsedInFileComparison
+line 2 → eachLineSortedDictTest
 
-##### Main
-start--> timeElapsedForDictSorting
-file --> fileToBeSorted
+lineNum → indexPositionOfLineByNumber
 
-br --> unsortedFileReader
-bw --> sortedFileWriter
+compare → timeElapsedInFileComparison
 
-##### Performance --> performanceTestingForProgram
-file1 --> readSortedByProgramFile
-file2 --> readSortedDictTestsFile
+#### Main
+start → timeElapsedForDictSorting
 
-line1 --> eachLineSortedByProgram
-line 2 --> eachLineSortedDictTest
+file → fileToBeSorted
 
-lineNum--> indexPositionOfLineByNumber
+br → unsortedFileReader
 
-end --> finalTimeForPerformanceTesting
-start --> initialTimeForPerformanceTesting
-test --> totalTimeElapsedForTesting
-time --> timeElapsedForPerformanceTest
+bw → sortedFileWriter
+
+#### Performance → performanceTestingForProgram
+
+file1 → readSortedByProgramFile
+
+file2 → readSortedDictTestsFile
+
+line1 → eachLineSortedByProgram
+
+line 2 → eachLineSortedDictTest
+
+lineNum → indexPositionOfLineByNumber
+
+end → finalTimeForPerformanceTesting
+
+start → initialTimeForPerformanceTesting
+
+test → totalTimeElapsedForTesting
+
+time → timeElapsedForPerformanceTest
 
 
 
