@@ -73,12 +73,11 @@ We extracted methods to reuse the code.
 
 ### 6.	Keep your code simple
 
-The code is simple and efficient!
+The code is simple to read and access thanks to the creation of methods and classes that can be called (or not depending of how the developer wants to use or modify the code) from the Main.java Class. Additionally by implementing this methodology, developers can search through the code more easily.
 
 ### 7.	YAGNI (You Ain’t Gonna Need It)
 
-We made sure that all our code is necessary and used.
-
+As of now we believe all the code written is necessary for the success of the project. Of course the have been modifications of how the code is presented but it has no been proven useless.
 
 ###### _For further information contact: [Martina Armas](https://www.linkedin.com/in/martina-armas-793b60157/) or [Vicente Hoyos](https://www.linkedin.com/in/vicente-hoyos-787594124/)_
 
