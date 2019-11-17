@@ -2,14 +2,14 @@
 ###### _By: Martina Armas and Vicente Hoyos_
 ## LinkedList Dictionary
 
-By using the 7 main coding principles (
+By using the 7 main coding principles we made our code more understandable, easier to modify and simple.
 
 ### 1. Meaningful names
 In our previous code we used very broad names for methods and classes that could mean different things, this is why we changed them.
 
-##### For User arguments:
-arguments --> userInput
-commands --> individualUserInput
+##### User arguments class:
+arguments → userInput
+commands → individualUserInput
 
 file1 --> readSortedByProgramFile
 file2 --> readSortedDictTestsFile
