@@ -52,30 +52,28 @@ test → totalTimeElapsedForTesting
 
 time → timeElapsedForPerformanceTest
 
-2.	Keep functions small
+### 2.	Keep functions small
 
 We kept our functions small with less than 3 arguments as it makes them more readable
 
 
-3.	Avoid redundant commenting
+### 3.	Avoid redundant commenting
 
 We erased all our comments which explained the code as it is more understandable with the specific names we created. As there was no need for binary code or legal comments, we ommited that.
 
-4.	SRP Single Responsibility Principle
+### 4.	SRP Single Responsibility Principle
 
 We separated "userarguments" and "performance" in different classes and called them in the Main. We tried to divide more, but didn't find how. Still what we did made managed to focus on just one goal o aspect.
 
-5.	DRY Don’t Repeat Yourself
+### 5.	DRY Don’t Repeat Yourself
 
 We extracted methods to reuse the code.
 
-6.	Keep your code simple
+### 6.	Keep your code simple
 
 The code is simple and efficient!
 
-
-
-7.	YAGNI (You Ain’t Gonna Need It)
+### 7.	YAGNI (You Ain’t Gonna Need It)
 
 We made sure that all our code is necessary and used.
 
