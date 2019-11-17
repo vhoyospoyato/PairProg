@@ -33,12 +33,7 @@ public class Main {
                     int index = 0;
                     while (current.next != null){
                         if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0) {
-                            Node temp = new Node(eachLineUnsortedDictTest);
-                            temp.next = current;
-                            if (index > 0){
-                                dictionary.get(index - 1).next = temp;
-                            }
-                            dictionary.add(index, temp);
+                            dictionary = addNodeToDictionaryCorrectAlphabeticalPosition(current, index, eachLineUnsortedDictTest,dictionary);
                             break;
                         }
                         else{
@@ -46,15 +41,13 @@ public class Main {
                             if (current.next == null){
                                 Node temp = new Node(eachLineUnsortedDictTest);
                                 if (current.data.compareToIgnoreCase(eachLineUnsortedDictTest) > 0){
-                                    temp.next = current;
-                                    dictionary.get(index).next = temp;
-                                    dictionary.add(index + 1, temp);
+                                    dictionary = addNodeToDictionaryCorrectly(temp, current,index,dictionary);
+                                    break;
                                 }
                                 else{
-                                    dictionary.getLast().next = temp;
-                                    dictionary.addLast(temp);
+                                    dictionary = addNodeToLastPartOfDictonary(temp, dictionary);
+                                    break;
                                 }
-                                break;
                             }
                             index ++;
                         }
@@ -78,6 +71,7 @@ public class Main {
         TestingClass.performanceTestingForProgram();
 
         UserArgumentClass.userArguments(dictionary);
+
     }
 
     public static LinkedList<Node> addFirstNodeToDictionary(Node head, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
@@ -99,6 +93,30 @@ public class Main {
         head.next = temp;
         dictionary.add(temp);
         return dictionary;
+    }
+
+    public static LinkedList<Node> addNodeToDictionaryCorrectAlphabeticalPosition(Node current, int index, String eachLineUnsortedDictTest, LinkedList<Node> dictionary){
+        Node temp = new Node(eachLineUnsortedDictTest);
+        temp.next = current;
+        if (index > 0){
+            dictionary.get(index - 1).next = temp;
+        }
+        dictionary.add(index, temp);
+        return dictionary;
+    }
+
+    public static LinkedList<Node> addNodeToDictionaryCorrectly(Node temp, Node current, int index, LinkedList<Node> dictionary){
+        temp.next = current;
+        dictionary.get(index).next = temp;
+        dictionary.add(index + 1, temp);
+        return dictionary;
+    }
+
+    public static LinkedList<Node> addNodeToLastPartOfDictonary(Node temp, LinkedList<Node> dictionary){
+        dictionary.getLast().next = temp;
+        dictionary.addLast(temp);
+        return dictionary;
+
     }
 
 }
